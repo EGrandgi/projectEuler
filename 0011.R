@@ -80,7 +80,7 @@ for (i in (1:17)){
   }
 }
 
-# diagonal down left products ######
+# diagonal down left products
 for (i in (1:17)){
   for (j in (4:20)){
     prod <- diag_down_left_prod(M, i, j)
