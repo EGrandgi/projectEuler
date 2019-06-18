@@ -18,3 +18,5 @@ smallest_mdiv <- function(until){
   }
   n
 }
+
+smallest_mdiv(20)
