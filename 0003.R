@@ -1,9 +1,11 @@
 ### 0003
 # prime numbers
-prime_numbers <- c(2, 3, 5, 7)
+prime_numbers <- c(2)
+cond <- "n%%2 != 0"
 for (n in (2:10000)){
-  if (n%%2 != 0 & n%%3 != 0 & n%%5 != 0 & n%%7 != 0){
+  if (eval(parse(text = cond))){
     prime_numbers <- c(prime_numbers, n)
+    cond <- paste(cond, " & n%%", n, " != 0", sep = "")
   }
 }
 
