@@ -1,3 +1,4 @@
+### 0020
 options("scipen" = 10000, "digits" = 22)
 
 fac <- function(n){
