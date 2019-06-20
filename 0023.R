@@ -13,3 +13,9 @@ for (n in (1:28111)){
   if(d(n) > n){abundant <- c(abundant, n)}
 }
 
+
+can <- c()
+for (i in (1:length(abundant))){
+  for (j in (i+1):length(abundant)){
+    can <- sort(unique(c(can, i+j)))
+}}
