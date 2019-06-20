@@ -13,9 +13,17 @@ for (n in (1:28111)){
   if(d(n) > n){abundant <- c(abundant, n)}
 }
 
-
+s <- Sys.time()
 can <- c()
 for (i in (1:length(abundant))){
   for (j in (i+1):length(abundant)){
-    can <- sort(unique(c(can, i+j)))
-}}
+    if (i+j < 28123){
+    can <- c(can, i+j)}
+  }}
+e <- Sys.time()
+print(e-s)
+
+can <- sort(unique(can))
+
+numbers <- (1:28123)
+sum(setdiff(numbers, can))
