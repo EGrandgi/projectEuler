@@ -1,0 +1,15 @@
+### 0023
+d <- function(n){
+  sum_ <- 0
+  if (n == 1){sum_ <- 1}
+  else {
+    for (k in (1:(n-1))){
+      if (n%%k == 0){
+        sum_ <- sum_ + k}}}
+  sum_}
+
+abundant <- c()
+for (n in (1:28111)){
+  if(d(n) > n){abundant <- c(abundant, n)}
+}
+
