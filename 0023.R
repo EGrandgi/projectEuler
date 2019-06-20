@@ -1,6 +1,4 @@
 ### 0023
-library(pbmcapply)
-
 d <- function(n){
   sum_ <- 0
   if (n == 1){sum_ <- 1}
@@ -10,34 +8,19 @@ d <- function(n){
         sum_ <- sum_ + k}}}
   sum_}
 
-abundant <- list()
-abundant <- pbmclapply((1:28111), function(n){
-  if(d(n) > n){abundant[length(abundant)+1] <- n}
-}, mc.cores = 10)
-abundant <- unlist(abundant)
+numbers <- (1:28111)
+are.abundant <- as.vector(rep(NA,length(numbers)))
+for (n in 1:length(numbers)) {
+  are.abundant[n] <- (d(n) > n)}
+abundant <- numbers[are.abundant]
 
-# abundant <- c()
-# for (n in (1:28111)){
-#   if(d(n) > n){abundant <- c(abundant, n)}
-# }
+can <- matrix(0, nrow = length(abundant), ncol = length(abundant),
+              dimnames = list(abundant, abundant))
 
-can <- list()
-can <- pbmclapply((1:length(abundant)), function(i){
-  pbmclapply((i:length(abundant)), function(j){
-    if (i+j < 28123){can[length(can)+1] <- i+j}
-  }, mc.cores = 10)
-}, mc.cores = 10)
+for (i in (1:length(abundant))) {
+  for (j in (i:length(abundant))) {
+    can[i, j] <- sum(abundant[c(i, j)])}}
 
-
-# can <- c()
-
-#for (i in (1:length(abundant))){
-#  for (j in (i+1):length(abundant)){
-#    if (i+j < 28123){
-#      can <- c(can, i+j)}
-# }}
-
-can <- sort(unique(can))
-
-numbers <- (1:28123)
+can <- unique(as.vector(can))
+can <- can[can <= 28123]
 sum(setdiff(numbers, can))
