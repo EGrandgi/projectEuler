@@ -13,15 +13,12 @@ for (n in (1:28111)){
   if(d(n) > n){abundant <- c(abundant, n)}
 }
 
-s <- Sys.time()
 can <- c()
 for (i in (1:length(abundant))){
   for (j in (i+1):length(abundant)){
     if (i+j < 28123){
     can <- c(can, i+j)}
   }}
-e <- Sys.time()
-print(e-s)
 
 can <- sort(unique(can))
 
