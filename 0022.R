@@ -1,7 +1,7 @@
 ### 0022
 alpha_values <- as.data.frame(setNames(list(LETTERS, c(1:26)),c("alpha","num")))
 
-file <- read.delim("/home/BVA/emma2/p022_names.txt", header = FALSE, sep = ",")
+file <- read.delim("/home/emma/p022_names.txt", header = FALSE, sep = ",")
 colnames(file) <- c(1:length(file))
 file[which(is.na(file))] <- "NA"
 file <- t(file)
