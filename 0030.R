@@ -11,7 +11,7 @@ i <- 1
 while (10**i < i*9**5){i <- i+1}
 
 sum_ <- 0
-for (n in (2:(6*9**5))){
+for (n in (2:(i*9**5))){
   if (sum_fifth(n) == n){sum_ <- sum_ + n}
 }
 
