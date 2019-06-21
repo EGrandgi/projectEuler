@@ -1,2 +1,2 @@
-## projectEuler_R
+## projectEuler
 https://projecteuler.net/about
