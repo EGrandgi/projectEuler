@@ -3,5 +3,6 @@
 
 library("gmp")
 
-length(unique(do.call("c",sapply(b,function(a) a^(as.bigz(2:100))))))
+length(unique(do.call("c",sapply(as.bigz(2:100),function(a) a^(as.bigz(2:100))))))
+
 
