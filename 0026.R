@@ -1,23 +1,22 @@
 ### 0026
 cycle_length <- function(d){
-  r <- 0
-  l <- 1
-  while (r != 1%%d & r != 10){
-    r <- (10**l)%%d
-    l <- l+1
+  i <- 0
+  r <- 10
+  while (i <= 0 | r != 10){
+    r <- 10*(r%%d)
+    i <- i+1
   }
-  l-1
+  i
 }
-
 
 longest_cycle <- 0
 id_longest_cycle <- 0
 
-for (d in (1:999)){
+for (d in (2:999)){
   if (d%%2 != 0 & d%%5 != 0){
     if(cycle_length(d) > longest_cycle){
       longest_cycle <- cycle_length(d)
       id_longest_cycle <- d
-      }
-}}
+    }
+  }}
 
