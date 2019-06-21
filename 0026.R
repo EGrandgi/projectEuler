@@ -1,4 +1,4 @@
-### 0036
+### 0026
 cycle_length <- function(d){
   r <- 0
   l <- 1
