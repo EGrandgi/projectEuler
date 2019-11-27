@@ -12,3 +12,5 @@ for(n in 5000:9999){
     largest <- concat_prod
   }
 }
+
+concat_prod
