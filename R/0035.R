@@ -17,7 +17,7 @@ is_circular <- function(n){
     }
   }else{
     res <- FALSE
-    }
+  }
   res
 }
 
