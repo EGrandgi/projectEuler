@@ -1,5 +1,5 @@
 ### 0027
-is.prime <- function(n){ifelse(n>1,(n == 2L & n!=1) || all(n %% 2L:max(2,floor(sqrt(n))) != 0),F)}
+is.prime <- function(n){ifelse(n>1,(n == 2L) || all(n %% 2L:max(2,floor(sqrt(n))) != 0),F)}
 
 primes_until <- function(n){
   primes <- c()
