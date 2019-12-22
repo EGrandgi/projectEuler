@@ -1,5 +1,4 @@
 ### 0052
-
 same.digits <- function(m, n){
   if(nchar(m) != nchar(n)){F} else {
     if(sum(sort(unlist(strsplit(as.character(m), ''))) == sort(unlist(strsplit(as.character(n), '')))) == length(unlist(strsplit(as.character(m), '')))){
