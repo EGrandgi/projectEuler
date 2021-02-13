@@ -105,9 +105,9 @@ n <- gsub("\n", "", n)
 large_numbers <- unlist(strsplit(n, ";", fixed = T))
 
 sum_ <- 0
-for (n in large_numbers){
-  sum_ <- sum_ + as.numeric(n)
+for (n in large_numbers) {
+    sum_ <- sum_ + as.numeric(n)
 }
 
-options("scipen" = 100, "digits" = 4)
+options(scipen = 100, digits = 4)
 substr(as.character(sum_), 1, 10)

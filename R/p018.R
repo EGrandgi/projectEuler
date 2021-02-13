@@ -21,15 +21,15 @@ triangle <- gsub("\n", "", triangle)
 temp <- unlist(strsplit(triangle, ";", fixed = T))
 triangle_floors <- list()
 
-for (f in (1:length(temp))){
-  triangle_floors[f] <- list(unlist(strsplit(temp[f], " ", fixed = T)))
+for (f in (1:length(temp))) {
+    triangle_floors[f] <- list(unlist(strsplit(temp[f], " ", fixed = T)))
 }
 
-for (f in ((length(triangle_floors)-1):1)){
-  for (c in (1:length(triangle_floors[f][[1]]))){
-    max <- as.numeric(max(triangle_floors[f+1][[1]][c], triangle_floors[f+1][[1]][c+1]))
-    triangle_floors[f][[1]][c] <- as.numeric(triangle_floors[f][[1]][c]) + max
-  }
+for (f in ((length(triangle_floors) - 1):1)) {
+    for (c in (1:length(triangle_floors[f][[1]]))) {
+        max <- as.numeric(max(triangle_floors[f + 1][[1]][c], triangle_floors[f + 1][[1]][c + 1]))
+        triangle_floors[f][[1]][c] <- as.numeric(triangle_floors[f][[1]][c]) + max
+    }
 }
 triangle_floors[1][[1]]
 

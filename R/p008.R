@@ -24,14 +24,14 @@ n <- "
 n <- gsub("\n", "", n)
 
 largest <- 0
-for (i in (1:(nchar(n)-13))){
-  p <- 1
-  for (k in (i:(i+12))){
-    p <- p*as.numeric(substr(n, k, k))
-  }
-  if (p > largest){
-    largest <- p
-  }
+for (i in (1:(nchar(n) - 13))) {
+    p <- 1
+    for (k in (i:(i + 12))) {
+        p <- p * as.numeric(substr(n, k, k))
+    }
+    if (p > largest) {
+        largest <- p
+    }
 }
 
 largest
